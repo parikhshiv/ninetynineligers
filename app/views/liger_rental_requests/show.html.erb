@@ -1,0 +1,31 @@
+<marquee><h1>
+<% if @liger_rental_request.status == 'APPROVED' %>
+  CONGRATS ON RENTING <%= @liger.name %>! ENJOY YOUR TIME WITH IT!
+<% elsif @liger_rental_request.status == 'DENIED' %>
+  REQUEST DENIED!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! you suck
+<% else %>
+  PENDING FOOL
+<% end %>
+</h1></marquee>
+
+
+<p>
+  START DATE: <%= @liger_rental_request.start_date %>
+</p>
+<p>
+  END DATE: <%= @liger_rental_request.end_date %>
+</p>
+
+<p>
+  Your request to 'rent' our liger is <%= @liger_rental_request.status %>
+</p>
+
+<% if @liger_rental_request.pending? %>
+  <p>
+    <%= button_to "Approve", approve_url(@liger_rental_request), method: :get %>
+    <%= button_to "Deny", deny_url(@liger_rental_request), method: :get %>
+  </p>
+<% end %>
+<p>
+  <%= link_to "CLICK HERE", liger_url(@liger) %> TO LEARN MORE ABOUT YOUR SPECIAL LIGER
+</p>

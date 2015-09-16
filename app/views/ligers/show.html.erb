@@ -1,0 +1,29 @@
+<h1> <%= @liger.name %></h1>
+<table>
+  <% @columns.each do |column_name, value| %>
+    <tr>
+      <th>
+        <%= column_name %>
+      </th>
+      <td>
+        <%= value %>
+      </td>
+    </tr>
+  <% end %>
+</table>
+
+<h1>Rental Requests</h1>
+<ul>
+  <% @liger_rental_requests.each do |request| %>
+    <li>
+      <%= request.start_date %>, <%= request.end_date %>
+      <%= link_to 'Rental Request', liger_rental_request_url(request) %>
+    </li>
+  <% end %>
+</ul>
+
+
+<p>
+  <%= link_to "Edit Liger", edit_liger_url %><br>
+  <%= link_to "All of the Ligers", ligers_url %>
+</p>

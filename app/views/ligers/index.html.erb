@@ -1,0 +1,10 @@
+<marquee><h1>ALL OF THE LIGERS!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!</h1></marquee>
+<ul>
+  <% @ligers.each do |liger| %>
+    <li><%= link_to liger.name, liger_url(liger.id) %></li>
+  <% end %>
+</ul>
+<p>
+  <%= link_to "MAKE THE LIGER OF YOUR DREAMS", new_liger_url %><br>
+  <%= link_to "RENT THE LIGER OF YOUR DREAMS", new_liger_rental_request_url %>
+</p>

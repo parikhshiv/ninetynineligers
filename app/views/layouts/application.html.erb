@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>NinetyNineLigers</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<marquee>
+<%= yield %>
+</marquee>
+<marquee direction="right" scrollamount="30">
+<img src="https://mandismindmatters.files.wordpress.com/2014/03/liger.jpeg" alt="Vote for Pedro" style="width:304px;height:228px;" />
+</marquee>
+</body>
+
+</html>

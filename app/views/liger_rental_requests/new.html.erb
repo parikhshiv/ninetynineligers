@@ -1,0 +1,27 @@
+<h2>RENT THE LIGER OF YOUR DREAMS</h2>
+
+<form action="/liger_rental_requests/<%= @liger_rental_request.id %>" method="POST">
+
+  <p>
+    <label for="ligername">Name:</label>
+    <select name="liger_rental_request[liger_id]" id="ligername">
+    <% @ligers.each do |liger| %>
+      <option value= <%= liger.id %>><%= liger.name %></option>
+    <% end %>
+    </select>
+  </p>
+
+  <p>
+    <label for="startdate">Start Date:</label>
+    <input type="date" name="liger_rental_request[start_date]" id="startdate" value= <%= @liger_rental_request.start_date %>>
+  </p>
+
+  <p>
+    <label for="enddate">End Date:</label>
+    <input type="date" name="liger_rental_request[end_date]" id="enddate" value= <%= @liger_rental_request.end_date %>>
+  </p>
+
+  <p>
+    <input type="submit" value="Submit Rental Request!">
+  </p>
+</form>

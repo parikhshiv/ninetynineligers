@@ -1,0 +1,48 @@
+
+<form action="/ligers/<%= liger.id %>" method="POST">
+  <% if liger.persisted? %>
+    <input type="hidden" name="_method" value="PATCH">
+  <% end %>
+  <p>
+    <label for="ligername">Name:</label>
+    <input type="text" name="liger[name]" id="ligername" value= <%= liger.name %>>
+  </p>
+
+<p>
+  <label for="birthdate">Birth Date:</label>
+  <input type="date" name="liger[birth_date]" id="birthdate" value= <%= liger.birth_date %>>
+</p>
+
+<p>
+  <label for="sex">Sex:</label><br>
+
+  <label for="male">Male:</label>
+    <input type="radio" name="liger[sex]" id="male" value="M" <%= "checked" if liger.sex == "M" %>>
+  <label for="female">Female:</label>
+  <input type="radio" name="liger[sex]" id="female" value="F" <%= "checked" if liger.sex == "F" %>>
+  <label for="?">?:</label>
+  <input type="radio" name="liger[sex]" id="?" value="?" <%= "checked" if liger.sex == "?" %>>
+</p>
+
+  <p>
+    <label for="color">Color:</label>
+    <select name="liger[color]" id="color">
+      <option value="rainbow" <%= "selected" if liger.color == "rainbow" %>>Rainbow</option>
+      <option value="shiny" <%= "selected" if liger.color == "shiny" %>>Shiny</option>
+      <option value="sparkly" <%= "selected" if liger.color == "sparkly" %>>Sparkly</option>
+      <option value="brown" <%= "selected" if liger.color == "brown" %>>Brown</option>
+    </select>
+  </p>
+
+  <p>
+    <label for="description">Description of your precious liger:</label>
+    <textarea name="liger[description]" id="description"><%= liger.description %></textarea>
+  </p>
+
+  <input type="submit" value= <%= submit_button %>>
+
+</form>
+
+<p>
+  <%= link_to "All of the Ligers", ligers_url %>
+</p>
